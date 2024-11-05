@@ -1,0 +1,82 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f5;
+}
+
+/* Навигация */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffd700;
+}
+
+/* Контент */
+.content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.content h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.content p {
+    font-size: 18px;
+    color: #555;
+}
+
+button#exploreButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#exploreButton:hover {
+    background-color: #0056b3;
+}
