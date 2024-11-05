@@ -1,0 +1,119 @@
+- `id` (INTEGER, PRIMARY KEY)
+- `name` (VARCHAR)
+- `position` (VARCHAR)
+- `department` (VARCHAR)
+- `salary` (DECIMAL)
+- `hire_date` (DATE)
+
+### 1. Выбор всех записей
+```sql
+SELECT * FROM employees;
+```
+
+### 2. Выбор определенных столбцов
+```sql
+SELECT id, name, position FROM employees;
+```
+
+### 3. Фильтрация записей по условию
+```sql
+SELECT * FROM employees WHERE department = 'Sales';
+```
+
+### 4. Фильтрация записей с использованием операторов сравнения
+```sql
+SELECT * FROM employees WHERE salary > 50000;
+```
+
+### 5. Сортировка записей
+```sql
+SELECT * FROM employees ORDER BY salary DESC;
+```
+
+### 6. Ограничение количества возвращаемых записей
+```sql
+SELECT * FROM employees LIMIT 10;
+```
+
+### 7. Объединение условий с использованием логических операторов
+```sql
+SELECT * FROM employees WHERE department = 'Sales' AND salary > 50000;
+```
+
+### 8. Использование агрегатных функций
+```sql
+SELECT AVG(salary) AS average_salary FROM employees;
+```
+
+### 9. Группировка записей
+```sql
+SELECT department, COUNT(*) AS employee_count FROM employees GROUP BY department;
+```
+
+### 10. Использование подзапросов
+```sql
+SELECT name, salary FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);
+```
+
+### 11. Обновление записей
+```sql
+UPDATE employees SET salary = salary * 1.1 WHERE department = 'Sales';
+```
+
+### 12. Удаление записей
+```sql
+DELETE FROM employees WHERE position = 'Intern';
+```
+
+### 13. Вставка новой записи
+```sql
+INSERT INTO employees (name, position, department, salary, hire_date)
+VALUES ('John Doe', 'Manager', 'Sales', 70000, '2023-01-01');
+```
+
+### 14. Использование оператора `IN`
+```sql
+SELECT * FROM employees WHERE department IN ('Sales', 'Marketing');
+```
+
+### 15. Использование оператора `BETWEEN`
+```sql
+SELECT * FROM employees WHERE salary BETWEEN 40000 AND 60000;
+```
+
+### 16. Использование оператора `LIKE`
+```sql
+SELECT * FROM employees WHERE name LIKE 'J%';
+```
+
+### 17. Использование оператора `DISTINCT`
+```sql
+SELECT DISTINCT department FROM employees;
+```
+
+### 18. Использование оператора `CASE`
+```sql
+SELECT name,
+       CASE
+           WHEN salary > 60000 THEN 'High'
+           WHEN salary > 40000 THEN 'Medium'
+           ELSE 'Low'
+       END AS salary_level
+FROM employees;
+```
+
+### 19. Использование оператора `JOIN` (предполагается наличие другой таблицы `departments`)
+```sql
+SELECT e.name, e.position, d.department_name
+FROM employees e
+JOIN departments d ON e.department = d.department_id;
+```
+
+### 20. Использование оператора `UNION`
+```sql
+SELECT name, position FROM employees WHERE department = 'Sales'
+UNION
+SELECT name, position FROM employees WHERE department = 'Marketing';
+```
+
+Эти запросы охватывают основные операции, которые могут понадобиться при работе с таблицей в SQL.
